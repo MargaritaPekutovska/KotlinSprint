@@ -1,6 +1,7 @@
 fun main() {
     trimMargin()
     detailsOfSpaceTravel()
+    timeSpendingInSpace()
 }
 
 fun trimMargin() {
@@ -39,3 +40,14 @@ fun detailsOfSpaceTravel() {
     println(spaceTravelInfo)
 }
 
+fun timeSpendingInSpace() {
+    val totalSecondInSpace = 6480
+    val secondsInHour = 3600
+    val fullHoursInSpace = totalSecondInSpace / secondsInHour
+    val remainderOfTheDivision = 2880
+
+    val fullMinuteInSpace = remainderOfTheDivision / 60
+    val fullSecondsInSpace = remainderOfTheDivision % 60
+
+    println("Time in space = $fullHoursInSpace:$fullMinuteInSpace:$fullSecondsInSpace")
+}
