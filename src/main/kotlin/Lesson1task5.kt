@@ -1,24 +1,23 @@
-fun main(){
-timeSpendingInSpace()
+fun main() {
+    timeSpendingInSpace(totalSecondsInSpace = 6480)
 }
 
-const val totalSecondInSpace: Int = 6480
-const val secondsInHour: Int = 3600
-const val secondInMinute: Int = 60
+const val SECONDS_IN_HOUR: Int = 3600
+const val SECONDS_IN_MINUTE: Int = 60
 
-fun timeSpendingInSpace() {
-    val totalSecondInSpace = totalSecondInSpace
-    val secondsInHour = secondsInHour
-    val fullHoursInSpace = totalSecondInSpace / secondsInHour
-    val remainderOfTheDivision = totalSecondInSpace%secondsInHour
+fun timeSpendingInSpace(totalSecondsInSpace: Int) {
+    val fullHoursInSpace = totalSecondsInSpace / SECONDS_IN_HOUR
+    val remainderOfTheDivision = totalSecondsInSpace % SECONDS_IN_HOUR
 
-    val fullMinuteInSpace = remainderOfTheDivision / secondInMinute
-    val fullSecondsInSpace = remainderOfTheDivision % secondInMinute
+    val fullMinuteInSpace = remainderOfTheDivision / SECONDS_IN_MINUTE
+    val fullSecondsInSpace = remainderOfTheDivision % SECONDS_IN_MINUTE
 
-    val formatedString = String.format("%02d:%02d:%02d",
+    val formatedString = String.format(
+        "%02d:%02d:%02d",
         fullHoursInSpace,
         fullMinuteInSpace,
-        fullSecondsInSpace)
+        fullSecondsInSpace
+    )
 
     println(formatedString)
 }
