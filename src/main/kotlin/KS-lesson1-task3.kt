@@ -38,9 +38,3 @@ fun detailsOfSpaceTravel() {
         """.trimMargin()
     println(spaceTravelInfo)
 }
-
-
-
-
-
-
