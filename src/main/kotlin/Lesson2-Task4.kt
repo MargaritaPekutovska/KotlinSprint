@@ -2,8 +2,7 @@ fun main() {
     mobileStrategy(20)
 }
 
-//fixed Conflicting declaration after Merge
-private const val ONE_HUNDRED_PERCENT = 100
+const val ONE_HUNDRED_PERCENT = 100
 
 fun mobileStrategy(buffUnitBooster: Int) {
     val crystallineMaterial = 7

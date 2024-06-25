@@ -2,8 +2,7 @@ fun main() {
     bankCalculatorApp()
 }
 
-//fixed Conflicting declaration after Merge
-private const val ONE_HUNDRED_PERCENT = 100
+const val ONE_HUNDRED_PERCENT = 100
 
 fun bankCalculatorApp() {
     val interestRate = 16.7
