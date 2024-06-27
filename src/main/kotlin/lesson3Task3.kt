@@ -3,7 +3,7 @@ fun main() {
 }
 
 fun multiplicationTableApp(inputNumber: Int) {
-    var result= ""
+    var result = ""
     for (i in 1..9) {
         result += "$inputNumber x $i = ${inputNumber * i} \n"
     }
