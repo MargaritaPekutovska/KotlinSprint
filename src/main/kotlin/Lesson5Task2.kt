@@ -5,7 +5,7 @@ fun main() {
 const val AGE_OF_MAJORITY = 18
 
 fun ageVerification(userAge: Int) {
-    var currentYear: Int = 2024
+    val currentYear: Int = 2024
     val yearOfMajority = currentYear - AGE_OF_MAJORITY
 
     if (userAge >= yearOfMajority)
