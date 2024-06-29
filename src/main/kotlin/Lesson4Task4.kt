@@ -1,17 +1,12 @@
 fun main() {
-    trainingProgram()
+    trainingProgram(dayOfTraining = 5)
 }
 
-data class Workout(val isAbsArmsWorkout: Boolean, val isLegsBackWorkout: Boolean)
+fun trainingProgram(dayOfTraining: Int) {
+    val isAbsArmsWorkout = dayOfTraining % 2 != 0
+    val isLegsBackWorkout = !isAbsArmsWorkout
 
-fun trainingProgram() {
-    val firstDay = Workout(isAbsArmsWorkout = true, isLegsBackWorkout = false)
-    val secondDay = Workout(isAbsArmsWorkout = false, isLegsBackWorkout = true)
-    val thirdDay = Workout(isAbsArmsWorkout = true, isLegsBackWorkout = false)
-    val fourthDay = Workout(isAbsArmsWorkout = false, isLegsBackWorkout = true)
-    val fifthDay = Workout(isAbsArmsWorkout = true, isLegsBackWorkout = false)
-
-    determineWorkoutType(isAbsArmsWorkout = fifthDay.isAbsArmsWorkout, isLegsBackWorkout = fifthDay.isLegsBackWorkout)
+    determineWorkoutType(isAbsArmsWorkout = isAbsArmsWorkout, isLegsBackWorkout = isLegsBackWorkout)
 }
 
 fun determineWorkoutType(isAbsArmsWorkout: Boolean, isLegsBackWorkout: Boolean) {
@@ -24,4 +19,3 @@ fun determineWorkoutType(isAbsArmsWorkout: Boolean, isLegsBackWorkout: Boolean) 
     """.trimIndent()
     )
 }
-
