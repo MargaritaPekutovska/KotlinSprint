@@ -20,13 +20,11 @@ fun lotteryApp(firstNumber: Int, secondNumber: Int) {
             "Failure.\n" +
                     "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER"
         )
-    else if (firstNumber != FIRST_WINNING_NUMBER && secondNumber == SECOND_WINNING_NUMBER)
+    else if (firstNumber != FIRST_WINNING_NUMBER && secondNumber == SECOND_WINNING_NUMBER ||
+        secondNumber != SECOND_WINNING_NUMBER && firstNumber == FIRST_WINNING_NUMBER
+    )
         println(
             "You won a consolation prize! \n" +
                     "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER"
         )
-    else if (firstNumber == FIRST_WINNING_NUMBER && secondNumber != SECOND_WINNING_NUMBER)
-        println(
-            "You won a consolation prize! \n" +
-                    "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER")
 }
