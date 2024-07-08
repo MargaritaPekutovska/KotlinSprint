@@ -1,21 +1,12 @@
-import java.util.*
+const val LOGIN_DATA = 20
 
 fun main() {
-    val firstNumber = Random().nextInt()
-    val secondNumber = Random().nextInt()
-    loginVerification(
-        firstNumber = firstNumber,
-        secondNumber = secondNumber,
-        result = firstNumber + secondNumber
-    )
-}
-
-fun loginVerification(firstNumber: Int, secondNumber: Int, result: Int) {
-    val exampleForLogin: Int = firstNumber + secondNumber
-
-    if (exampleForLogin == result) {
+    println("Please enter your login data")
+    val firstNumber = readLine()!!.toInt()
+    val secondNumber = readLine()!!.toInt()
+    if ((firstNumber + secondNumber) == LOGIN_DATA) {
         println("Welcome!")
     } else {
-        println("Access is denied")
+        println("Access denied")
     }
 }
