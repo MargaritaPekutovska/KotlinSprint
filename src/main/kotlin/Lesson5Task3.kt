@@ -1,30 +1,34 @@
+import kotlin.random.Random
+
 fun main() {
-    lotteryApp(firstNumber = 2, secondNumber = 21)
+    lotteryApp()
 }
 
 const val NUMBER_FROM = 0
 const val NUMBER_TO = 42
-const val FIRST_WINNING_NUMBER = 3
-const val SECOND_WINNING_NUMBER = 21
 
-fun lotteryApp(firstNumber: Int, secondNumber: Int) {
+fun lotteryApp() {
     println("Select number from $NUMBER_FROM to $NUMBER_TO")
+    val firstNumber = readLine()!!.toInt()
+    val secondNumber = readLine()!!.toInt()
+    val firstWinningNumber = Random.nextInt(NUMBER_FROM, NUMBER_TO)
+    val secondWinningNumber = Random.nextInt(NUMBER_FROM, NUMBER_TO)
 
-    if (firstNumber == FIRST_WINNING_NUMBER && secondNumber == SECOND_WINNING_NUMBER)
+    if (firstNumber == firstWinningNumber && secondNumber == secondWinningNumber)
         println(
             "Congratulations! You won a prize\n" +
-                    "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER"
+                    "Correct answer is $firstWinningNumber and $secondWinningNumber"
         )
-    else if (firstNumber != FIRST_WINNING_NUMBER && secondNumber != SECOND_WINNING_NUMBER)
+    else if (firstNumber != firstWinningNumber && secondNumber != secondWinningNumber)
         println(
             "Failure.\n" +
-                    "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER"
+                    "Correct answer is $firstWinningNumber and $secondWinningNumber"
         )
-    else if (firstNumber != FIRST_WINNING_NUMBER && secondNumber == SECOND_WINNING_NUMBER ||
-        secondNumber != SECOND_WINNING_NUMBER && firstNumber == FIRST_WINNING_NUMBER
+    else if (firstNumber != firstWinningNumber && secondNumber == secondWinningNumber ||
+        secondNumber != secondWinningNumber && firstNumber == firstWinningNumber
     )
         println(
             "You won a consolation prize! \n" +
-                    "Correct answer is $FIRST_WINNING_NUMBER and $SECOND_WINNING_NUMBER"
+                    "Correct answer is $firstWinningNumber and $secondWinningNumber"
         )
 }
