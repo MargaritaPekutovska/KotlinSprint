@@ -17,7 +17,7 @@ fun loginDataVerification(userName: String, password: String) {
        """.trimMargin()
     println(robotGreeting)
 
-    println("Enter your $userName")
+    println("Enter your name")
 
 
     if (userName != SAVED_USER_NAME) {
@@ -25,13 +25,13 @@ fun loginDataVerification(userName: String, password: String) {
         return
     }
 
-    println("Enter your $password")
+    println("Enter your password")
 
     if (password == SAVED_USER_PASSWORD) {
         val robotGreeting2 = """
         |sighs...,
         |Your data has been verified, and lo and behold, it's correct...
-        |User "Zaphod", you are allowed to board the ship "Heart of Gold"
+        |User "$userName", you are allowed to board the ship "Heart of Gold"
         |Although I don’t care... Well, go ahead, come in... If you really need it, in the end... 
         |[melancholy sigh...]
         |I hope you enjoy your stay here more than I did.
