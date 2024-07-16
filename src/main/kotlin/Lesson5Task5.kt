@@ -1,22 +1,23 @@
 import kotlin.random.Random
 
-fun main(){
-lotteryAppUpgrade()
+fun main() {
+    lotteryAppUpgrade()
 }
-const val LOTTERY_UPPER_BOUNDARY=42
-const val LOTTERY_LOWER_BOUNDARY=0
 
-fun lotteryAppUpgrade(){
-    println("Enter your three lotery numbers (0-42):")
-    val numberOne= readLine()!!.toInt()
-    val numberTwo= readLine()!!.toInt()
-    val numberThree= readLine()!!.toInt()
+const val LOTTERY_UPPER_BOUNDARY = 42
+const val LOTTERY_LOWER_BOUNDARY = 0
 
-    val inputList= mutableListOf(numberOne, numberTwo, numberThree)
+fun lotteryAppUpgrade() {
+    println("Enter your three lottery numbers (0-42):")
+    val numberOne = readln().toInt()
+    val numberTwo = readln().toInt()
+    val numberThree = readln().toInt()
+
+    val inputList = mutableListOf(numberOne, numberTwo, numberThree)
 
     val firstWinningNumber = Random.nextInt(LOTTERY_LOWER_BOUNDARY, LOTTERY_UPPER_BOUNDARY + 1)
-    val secondWinningNumber = Random.nextInt(LOTTERY_LOWER_BOUNDARY,LOTTERY_UPPER_BOUNDARY + 1)
-    val thirdWinningNumber = Random.nextInt(LOTTERY_LOWER_BOUNDARY,LOTTERY_UPPER_BOUNDARY + 1)
+    val secondWinningNumber = Random.nextInt(LOTTERY_LOWER_BOUNDARY, LOTTERY_UPPER_BOUNDARY + 1)
+    val thirdWinningNumber = Random.nextInt(LOTTERY_LOWER_BOUNDARY, LOTTERY_UPPER_BOUNDARY + 1)
 
     val winningNumber = mutableListOf(firstWinningNumber, secondWinningNumber, thirdWinningNumber)
 
