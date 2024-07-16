@@ -9,8 +9,8 @@ const val NUMBER_TO = 42
 
 fun lotteryApp() {
     println("Select number from $NUMBER_FROM to $NUMBER_TO")
-    val firstNumber = readLine()!!.toInt()
-    val secondNumber = readLine()!!.toInt()
+    val firstNumber = readln().toInt()
+    val secondNumber = readln().toInt()
     val firstWinningNumber = Random.nextInt(NUMBER_FROM, NUMBER_TO)
     val secondWinningNumber = Random.nextInt(NUMBER_FROM, NUMBER_TO)
 
