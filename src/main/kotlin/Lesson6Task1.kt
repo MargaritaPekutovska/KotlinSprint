@@ -13,7 +13,7 @@ fun registrationInApp() {
         println("To login enter your created user name and password")
         val userNameInput = readln()
         val passwordInput = readln()
-    } while (userNameInput != createdUserNane && passwordInput != createdPassword)
+    } while (userNameInput != createdUserNane || passwordInput != createdPassword)
 
     println("You have successfully logged in")
 }
