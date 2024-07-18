@@ -9,7 +9,7 @@ const val MAX_GUESS_NUMBER = 9
 const val MAX_TRIES_NUMBER = 5
 
 fun guessNumberGame() {
-    val targetNumber = Random.nextInt(MINIMUM_GUESS_NUMBER, MAX_GUESS_NUMBER)
+    val targetNumber = Random.nextInt(MINIMUM_GUESS_NUMBER, MAX_GUESS_NUMBER+1)
     var triesLeft = MAX_TRIES_NUMBER
     println("You have 5 tries to guess winning number")
 
