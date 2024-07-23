@@ -1,8 +1,8 @@
 fun main() {
-timerApp2()
+    timerApp2()
 }
 
-fun timerApp2(){
+fun timerApp2() {
     println("Enter your time: ")
     val time = readln().toInt()
 

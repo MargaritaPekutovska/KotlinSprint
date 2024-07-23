@@ -6,7 +6,7 @@ const val MINIMUM_GUESS_NUMBER = 1
 const val MAX_GUESS_NUMBER = 9
 const val MAX_TRIES_NUMBER = 5
 
-val rangeOfNumbers = IntRange(MINIMUM_GUESS_NUMBER, MAX_GUESS_NUMBER)
+val rangeOfNumber = IntRange(MINIMUM_GUESS_NUMBER, MAX_GUESS_NUMBER)
 
 fun guessNumberGame() {
     val targetNumber = rangeOfNumbers.random()
