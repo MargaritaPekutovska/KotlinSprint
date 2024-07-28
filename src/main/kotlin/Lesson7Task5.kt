@@ -3,6 +3,7 @@ fun main() {
 }
 
 const val MIN_PASSWORD_LENGTH = 6
+const val CHECKING_NUMBER = 3
 
 fun createPassword() {
     var passwordLength: Int? = null
@@ -22,9 +23,9 @@ fun createPassword() {
 }
 
 fun generatedPassword(length: Int): String {
-    val digits = "0123456789"
-    val lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
-    val upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    val digits = ('0'..'9')
+    val lowerCaseLetters = ('a'..'z')
+    val upperCaseLetters = ('A'..'Z')
 
     val allChars = digits + lowerCaseLetters + upperCaseLetters
 
@@ -33,7 +34,7 @@ fun generatedPassword(length: Int): String {
     password.append(lowerCaseLetters.random())
     password.append(upperCaseLetters.random())
 
-    repeat(length - 3) {
+    repeat(length - CHECKING_NUMBER) {
         password.append(allChars.random())
     }
 
