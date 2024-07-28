@@ -6,7 +6,7 @@ const val MINIMAL_NUMBER = 1
 const val MAXIMAL_NUMBER = 9
 const val TRIES_NUMBER = 3
 
-val rangeOfNumbers = IntRange(MINIMAL_NUMBER, MAXIMAL_NUMBER)
+private val rangeOfNumbers = IntRange(MINIMAL_NUMBER, MAXIMAL_NUMBER)
 
 fun loginVerification() {
     var triesNumber = TRIES_NUMBER
