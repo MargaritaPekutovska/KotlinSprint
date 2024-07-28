@@ -15,7 +15,7 @@ fun recipesApp() {
             break
         }
         if (arrayOfIngredients.indexOf(ingredient) == arrayOfIngredients.size - 1) {
-            println("The recipe doesn`t contains the ingredient $userIngredient")
+            println("The recipe doesn`t contain the ingredient $userIngredient")
         }
     }
 }
