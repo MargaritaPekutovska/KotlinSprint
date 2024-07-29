@@ -12,10 +12,8 @@ fun recipesApp() {
     for (ingredient in arrayOfIngredients) {
         if (userIngredient == ingredient) {
             println("The recipe contains $ingredient")
-            break
-        }
-        if (arrayOfIngredients.indexOf(ingredient) == arrayOfIngredients.size - 1) {
-            println("The recipe doesn`t contain the ingredient $userIngredient")
+            return
         }
     }
+    println("The recipe doesn`t contain the ingredient $userIngredient")
 }
