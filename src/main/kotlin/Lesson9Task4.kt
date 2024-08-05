@@ -1,5 +1,5 @@
 fun main() {
-userInfo()
+    userInfo()
 }
 
 fun userInfo() {
