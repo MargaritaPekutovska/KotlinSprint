@@ -12,14 +12,13 @@ private fun ingredients() {
 
     println("Please write what ingredient you want to replace")
     val userIngredientsInfo = readln()
+    val indexOfIngredient = listOfIngredients.indexOf(userIngredientsInfo)
 
-    val containsElements = userIngredientsInfo in listOfIngredients
-    if (!containsElements) {
+    if (indexOfIngredient == -1) {
         println("This ingredient does not part of the recipe")
     } else {
         println("This ingredient is part of the recipe. What you want to replace it with?")
         val userIngredientToReplace = readln()
-        val indexOfIngredient = listOfIngredients.indexOf(userIngredientsInfo)
         listOfIngredients[indexOfIngredient] = userIngredientToReplace
         println(Arrays.toString(listOfIngredients))
     }
