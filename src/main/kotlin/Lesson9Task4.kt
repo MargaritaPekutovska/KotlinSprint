@@ -5,8 +5,8 @@ fun main() {
 fun userInfo() {
     println("Please write 5 ingredients separated by a coma:")
 
-    val fiveIngredients = readln().split(",").map { it.trim() }.toMutableList()
-    fiveIngredients.sort()
+    val fiveIngredients = readln().split(",").map { it.trim() }
+    fiveIngredients.sorted()
 
     println(fiveIngredients.joinToString(", "))
 }
