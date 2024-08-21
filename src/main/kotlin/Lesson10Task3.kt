@@ -1,5 +1,3 @@
-import kotlin.random.Random
-
 fun main() {
     createPassword()
 }
@@ -19,9 +17,9 @@ private fun generatePassword(passwordLength: Int): String {
 
     for (i in 0 until passwordLength) {
         if (i % 2 == 0) {
-            password.append(digits[Random.nextInt(digits.length)])
+            password.append(digits.random())
         } else {
-            password.append(specialChars[Random.nextInt(specialChars.length)])
+            password.append(specialChars.random())
         }
     }
     return password.toString()
