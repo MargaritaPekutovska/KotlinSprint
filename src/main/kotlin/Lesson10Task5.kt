@@ -4,6 +4,11 @@ fun main() {
     shoppingCartApp()
 }
 
+private val shoppingCart: Array<String> = arrayOf("T-Shirt", "Shorts", "Cap")
+private const val USER_NAME = "MargaritaP"
+private const val USER_PASSWORD = "sRt669"
+private const val TOKEN_LENGTH = 32
+
 private fun shoppingCartApp() {
     val token: String? = authorizeUser()
     val cart = getShoppingCart(token)
@@ -12,8 +17,6 @@ private fun shoppingCartApp() {
     else println("Authorization not successful!")
 }
 
-private val shoppingCart: Array<String> = arrayOf("T-Shirt", "Shorts", "Cap")
-
 private fun getShoppingCart(token: String?): Array<String>? {
     if (token == null) {
         return null
@@ -21,9 +24,6 @@ private fun getShoppingCart(token: String?): Array<String>? {
         return shoppingCart
     }
 }
-
-private const val USER_NAME = "MargaritaP"
-private const val USER_PASSWORD = "sRt669"
 
 private fun authorizeUser(): String? {
     println("Enter your login:")
@@ -39,8 +39,6 @@ private fun authorizeUser(): String? {
     }
 
 }
-
-private const val TOKEN_LENGTH = 32
 
 private fun generateToken(): String {
     val rangeLetters = ('a'..'z').toList()
