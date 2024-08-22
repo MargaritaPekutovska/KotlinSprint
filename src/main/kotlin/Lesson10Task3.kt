@@ -11,7 +11,7 @@ private fun createPassword() {
 
 private fun generatePassword(passwordLength: Int): String {
     val digits = "0123456789"
-    val specialChars = """!"#$%&'()*+,-./"""
+    val specialChars = ((33..47) + (58..64) + (91..96) + (123..126)).map { it.toChar() }
 
     val password = StringBuilder()
 
