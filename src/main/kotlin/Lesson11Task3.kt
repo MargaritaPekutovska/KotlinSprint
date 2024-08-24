@@ -1,4 +1,4 @@
-class Room (
+class Room(
     val roomName: String,
     val cover: String,
     val participantList: ArrayList<Participant>
@@ -29,29 +29,30 @@ class Room (
     }
 }
 
-    class Participant(
-        val userName: String,
-        var audioStatus: String,
-    )
+class Participant(
+    val avarat: String,
+    val userName: String,
+    var audioStatus: String,
+)
 
+fun main() {
 
-    val room = Room (
+    val room = Room(
         roomName = "Funny podcasts",
-        cover = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi3HDfy9bU5aslSNV2hLNKt4Sv7-DAsTdqsA&s",
+        cover = "cover_image.png",
         participantList = arrayListOf(
-            Participant(userName = "Dylan1", audioStatus = "Talking.."),
-            Participant(userName = "Emily3", audioStatus = "Audio is mute"),
-            Participant(userName = "RodgerD", audioStatus = "User muted")
+            Participant(avarat = "cover_image.png", userName = "Dylan1", audioStatus = "Talking.."),
+            Participant(avarat = "cover_image.png", userName = "Emily3", audioStatus = "Audio is mute"),
+            Participant(avarat = "cover_image.png", userName = "RodgerD", audioStatus = "User muted")
         )
     )
 
-    fun main() {
-        room.displayRoomInfo()
+    room.displayRoomInfo()
 
-        room.addParticipant(Participant(userName = "NewUser", audioStatus = "Listening"))
+    room.addParticipant(Participant(avarat = "cover_image.png", userName = "NewUser", audioStatus = "Listening"))
 
-        room.updateAudioStatus(userName = "Emily3", newAudioStatus = "Talking..")
+    room.updateAudioStatus(userName = "Emily3", newAudioStatus = "Talking..")
 
-        room.displayRoomInfo()
+    room.displayRoomInfo()
 
-    }
+}
