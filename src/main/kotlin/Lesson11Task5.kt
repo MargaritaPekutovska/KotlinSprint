@@ -1,13 +1,19 @@
-class Forum() {
+class Forum {
 
     private val participantList = ArrayList<ForumParticipant>()
     private val messageList = ArrayList<ForumMessage>()
+    private var lastStoredId = 0
 
     fun createNewUser(userName: String): ForumParticipant {
-        val digitsForId = 0..9
-        val generateId = digitsForId.random()
+        val generateId = if (lastStoredId == 0) {
+            val digitsForId = 0..9
+            digitsForId.random()
+        } else {
+            lastStoredId + 1
+        }
         val newParticipant = ForumParticipant(userId = generateId.toString(), userName = userName)
         participantList.add(newParticipant)
+        lastStoredId = generateId
         return newParticipant
     }
 
@@ -19,7 +25,6 @@ class Forum() {
                 val newMessage =
                     ForumMessage(authorId = userId, message = message, userName = currentParticipant.userName)
                 messageList.add(newMessage)
-
                 return newMessage
             }
         }
@@ -30,12 +35,9 @@ class Forum() {
         for (i in 0 until messageList.size) {
             val forumMessage = messageList.get(i)
             println("${forumMessage.userName} : ${forumMessage.message}")
-
         }
     }
-
 }
-
 
 class ForumParticipant(
     val userId: String,
@@ -45,7 +47,7 @@ class ForumParticipant(
 class ForumMessage(
     val authorId: String,
     val message: String,
-    val userName: String
+    val userName: String,
 )
 
 fun main() {
