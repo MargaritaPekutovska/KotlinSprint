@@ -39,21 +39,11 @@ fun main() {
         userEmail = "bobaFett03@gmail.com",
     )
 
-    println(
-        """
-        Initial user info:
-        ${user.printUserInfo()}
-        
-        Update bio:
-        ${user.updateBio()}
-        
-        Change password:
-        ${user.changePassword()}
-        
-        Updated user info:
-        ${user.printUserInfo()}
-        """.trimIndent()
-    )
+    println("Initial user info")
+    user.printUserInfo()
+    user.updateBio()
+    user.changePassword()
+    user.printUserInfo()
 }
 
 
