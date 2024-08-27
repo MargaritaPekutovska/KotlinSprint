@@ -1,13 +1,13 @@
-class DailyWeatherDegrees{
+class DailyWeatherDegrees {
 
-    private var daytimeTemperatureCelsius: Int=0
-    private var nightTemperatureCelsius: Int=0
-    private var precipitationDuringTheDay: Boolean=false
+    private var daytimeTemperatureCelsius: Int = 0
+    private var nightTemperatureCelsius: Int = 0
+    private var precipitationDuringTheDay: Boolean = false
 
-    constructor(daytimeTemperatureKelvin:Int, nightTemperatureKelvin:Int,precipitationDuringTheDay:Boolean){
-        daytimeTemperatureCelsius=convertKelvinInCelsius(daytimeTemperatureKelvin).toInt()
-        nightTemperatureCelsius=convertKelvinInCelsius(nightTemperatureKelvin).toInt()
-        this.precipitationDuringTheDay=precipitationDuringTheDay
+    constructor(daytimeTemperatureKelvin: Int, nightTemperatureKelvin: Int, precipitationDuringTheDay: Boolean) {
+        daytimeTemperatureCelsius = convertKelvinInCelsius(daytimeTemperatureKelvin).toInt()
+        nightTemperatureCelsius = convertKelvinInCelsius(nightTemperatureKelvin).toInt()
+        this.precipitationDuringTheDay = precipitationDuringTheDay
     }
 
     fun printWeather() {
@@ -23,11 +23,11 @@ class DailyWeatherDegrees{
 
 const val ZERO_OFFSET = 273.15
 
-fun main(){
-    val dailyWeather=DailyWeatherDegrees(
+fun main() {
+    val dailyWeather = DailyWeatherDegrees(
         daytimeTemperatureKelvin = 300,
-        nightTemperatureKelvin= 290,
-        precipitationDuringTheDay=true
+        nightTemperatureKelvin = 290,
+        precipitationDuringTheDay = true
     )
     dailyWeather.printWeather()
 }
