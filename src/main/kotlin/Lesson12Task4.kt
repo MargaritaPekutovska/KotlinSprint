@@ -7,6 +7,7 @@ class DailyWeatherDegrees4(
     private var daytimeTemperatureCelsius: Int
     private var nightTemperatureCelsius: Int
     private var precipitationDuringTheDay: Boolean = precipitationDuringTheDay
+    private val zeroOffset = 273.15
 
     init {
         daytimeTemperatureCelsius = convertKelvinInCelsius(daytimeTemperatureKelvin).toInt()
@@ -21,11 +22,7 @@ class DailyWeatherDegrees4(
     }
 
     private fun convertKelvinInCelsius(temperatureInKelvin: Int): Double {
-        return temperatureInKelvin - ZERO_OFFSET
-    }
-
-    private companion object {
-        const val ZERO_OFFSET = 273.15
+        return temperatureInKelvin - zeroOffset
     }
 }
 
