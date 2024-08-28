@@ -5,11 +5,9 @@ class Forum {
     private var userIdCounter = 0
 
     fun createNewUser(userName: String): ForumParticipant {
-        val generateId = userIdCounter + 1
 
-        val newParticipant = ForumParticipant(userId = generateId.toString(), userName = userName)
+        val newParticipant = ForumParticipant(userId = userIdCounter++.toString(), userName = userName)
         participantList.add(newParticipant)
-        userIdCounter = generateId
         return newParticipant
     }
 
