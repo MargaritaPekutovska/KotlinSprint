@@ -1,3 +1,5 @@
+package lesson11
+
 class User2(
     val userName: String,
     var userPassword: String,

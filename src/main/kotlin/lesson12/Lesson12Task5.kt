@@ -1,3 +1,5 @@
+package lesson12
+
 import kotlin.random.Random
 
 class DailyWeatherDegrees5(

@@ -1,3 +1,5 @@
+package lesson10
+
 import java.util.Arrays
 
 fun main() {

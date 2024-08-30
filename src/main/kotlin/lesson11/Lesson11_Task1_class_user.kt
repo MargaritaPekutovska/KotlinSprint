@@ -1,3 +1,5 @@
+package lesson11
+
 class UserInfo(
     val userName: String,
     val userPassword: String,

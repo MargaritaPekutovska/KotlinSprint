@@ -1,3 +1,5 @@
+package lesson11
+
 data class Category(
     val image: String,
     val name: String,

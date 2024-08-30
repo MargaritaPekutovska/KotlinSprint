@@ -1,3 +1,5 @@
+package lesson12
+
 class DailyWeatherDegrees2(
     daytimeTemperatureKelvin: Int,
     nightTemperatureKelvin: Int,

@@ -1,3 +1,5 @@
+package lesson12
+
 class DailyWeather {
     var daytimeTemperature: Int = 0
     var nightTemperature: Int = 0

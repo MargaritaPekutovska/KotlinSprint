@@ -1,3 +1,5 @@
+package lesson11
+
 class Room(
     val roomName: String,
     val cover: String,

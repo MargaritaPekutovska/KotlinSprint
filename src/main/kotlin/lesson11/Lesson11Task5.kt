@@ -1,3 +1,5 @@
+package lesson11
+
 class Forum {
 
     private val participantList = ArrayList<ForumParticipant>()
