@@ -11,7 +11,7 @@ class AddressBookContact(
             val formatedNumber = userInputNumber.toLong()
             userPhoneNumber = formatedNumber
         } catch (exception: NumberFormatException) {
-            println("Exception has been caught $exception")
+            println("Exception has been caught ${exception::class.java.simpleName}")
         }
     }
 }
