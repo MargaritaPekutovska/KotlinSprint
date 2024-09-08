@@ -6,27 +6,16 @@ abstract class User(val userName: String) {
     fun writeMessage(message: String) {
         println("$userName writing message: $message")
     }
-
-    abstract fun deleteMessage(message: String)
-    abstract fun deleteUser(user: User)
 }
 
-class ForumUser(userName: String) : User(userName) {
-    override fun deleteMessage(message: String) {
-        println("User cannot delete messages")
-    }
-
-    override fun deleteUser(user: User) {
-        println("User cannot delete other users")
-    }
-}
+class ForumUser(userName: String) : User(userName)
 
 class ForumAdmin(userName: String) : User(userName) {
-    override fun deleteMessage(message: String) {
+    fun deleteMessage(message: String) {
         println("$userName deletes messages: $message")
     }
 
-    override fun deleteUser(user: User) {
+    fun deleteUser(user: User) {
         println("$userName deletes: ${user.userName}")
     }
 }
@@ -37,9 +26,8 @@ fun main() {
 
     user1.readForum()
     user1.writeMessage("Hello everyone!")
-    user1.deleteMessage("Hello everyone!")
 
     admin.readForum()
-    admin.writeMessage("Deleting message.")
+    admin.deleteMessage("Deleting message.")
     admin.deleteUser(user1)
 }
