@@ -1,23 +1,32 @@
-interface OrderItem {
-    val orderNumber: Int
-    fun printOrderInfo()
-}
+class OrderItem {
+    private val orderNumber: Int
+    private val listOfItems: List<String>
+    private var item: String?
 
-class SingleItemOrder(override val orderNumber: Int, private val item: String) : OrderItem {
-    override fun printOrderInfo() {
-        println("Order №$orderNumber: ordered item : $item")
+    constructor(orderNumber: Int, item: String) {
+        this.orderNumber = orderNumber
+        this.item = item
+        listOfItems = emptyList()
     }
-}
 
-class MultipleItemsOrder(override val orderNumber: Int, private val items: List<String>) : OrderItem {
-    override fun printOrderInfo() {
-        println("Order №$orderNumber: The following items have been ordered: ${items.joinToString(", ")}")
+    constructor(orderId: Int, items: List<String>) {
+        this.orderNumber = orderId
+        listOfItems = items
+        item = null
+    }
+
+    fun printOrderInfo() {
+        if (listOfItems.isEmpty() && item != null) {
+            println("Order №$orderNumber: ordered item : $item")
+        } else if (listOfItems.isNotEmpty()) {
+            println("Order №$orderNumber: The following items have been ordered: ${listOfItems.joinToString(", ")}")
+        }
     }
 }
 
 fun main() {
-    val order1: OrderItem = SingleItemOrder(1, "Guitar")
-    val order2: OrderItem = MultipleItemsOrder(2, listOf("Drams", "Speaker", "Headphones"))
+    val order1 = OrderItem(1, "Guitar")
+    val order2 = OrderItem(2, listOf("Drams", "Speaker", "Headphones"))
 
     order1.printOrderInfo()
     order2.printOrderInfo()
