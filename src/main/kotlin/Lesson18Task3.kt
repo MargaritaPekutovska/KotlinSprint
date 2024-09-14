@@ -1,33 +1,23 @@
-interface Animal {
-    fun sleep()
-    fun eat()
-}
-
-class Fox(private val name: String) : Animal {
-    override fun sleep() {
+abstract class Animal(private val name: String) {
+    fun sleep() {
         println("$name -> sleeps")
     }
+    abstract fun eat()
+}
 
+class Fox(private val name: String) : Animal(name) {
     override fun eat() {
         println("$name -> eats berries")
     }
 }
 
-class Dog(private val name: String) : Animal {
-    override fun sleep() {
-        println("$name -> sleeps")
-    }
-
+class Dog(private val name: String) : Animal(name) {
     override fun eat() {
         println("$name -> eats bones")
     }
 }
 
-class Cat(private val name: String) : Animal {
-    override fun sleep() {
-        println("$name -> sleeps")
-    }
-
+class Cat(private val name: String) : Animal(name) {
     override fun eat() {
         println("$name -> eats fish")
     }
