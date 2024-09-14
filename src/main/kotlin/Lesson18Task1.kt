@@ -1,33 +1,16 @@
 class OrderItem {
-    private val orderNumber: Int
-    private val listOfItems: List<String>
-    private var item: String?
-
-    constructor(orderNumber: Int, item: String) {
-        this.orderNumber = orderNumber
-        this.item = item
-        listOfItems = emptyList()
+    fun printOrderInfo(orderNumber: Int, item: String){
+        println("Order №$orderNumber: ordered item : $item")
     }
 
-    constructor(orderId: Int, items: List<String>) {
-        this.orderNumber = orderId
-        listOfItems = items
-        item = null
-    }
-
-    fun printOrderInfo() {
-        if (listOfItems.isEmpty() && item != null) {
-            println("Order №$orderNumber: ordered item : $item")
-        } else if (listOfItems.isNotEmpty()) {
-            println("Order №$orderNumber: The following items have been ordered: ${listOfItems.joinToString(", ")}")
-        }
+    fun printOrderInfo(orderNumber: Int, item: List<String>){
+        println("Order №$orderNumber: ordered item : $item")
     }
 }
 
 fun main() {
-    val order1 = OrderItem(1, "Guitar")
-    val order2 = OrderItem(2, listOf("Drams", "Speaker", "Headphones"))
+    val order = OrderItem()
 
-    order1.printOrderInfo()
-    order2.printOrderInfo()
+    order.printOrderInfo(1,"Guitar")
+    order.printOrderInfo(2, listOf("Drams","Speaker", "Headphones"))
 }
