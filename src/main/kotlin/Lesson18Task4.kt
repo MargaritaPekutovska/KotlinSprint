@@ -1,34 +1,30 @@
-interface Box {
-    fun calculateBoxSurfaceArea(width: Int = 0, length: Int = 0, height: Int = 0, edgeLength: Int = 0): Int
+open class Box {
+    open fun calculateBoxSurfaceArea(): Int {
+        return 0
+    }
 }
 
-class RectangularBox : Box {
-    override fun calculateBoxSurfaceArea(width: Int, length: Int, height: Int, edgeLength: Int): Int {
+class RectangularBox(private val width: Int, private val length: Int, private val height: Int) : Box() {
+    override fun calculateBoxSurfaceArea(): Int {
         val numFaces = 2
         return numFaces * (width * length + length * height + width * height)
     }
 }
 
-class CubicBox : Box {
-    override fun calculateBoxSurfaceArea(width: Int, length: Int, height: Int, edgeLength: Int): Int {
+class CubicBox(private val edgeLength: Int) : Box() {
+    override fun calculateBoxSurfaceArea(): Int {
         val numFaces = 6
         return numFaces * (edgeLength * edgeLength)
     }
 }
 
 fun main() {
-    val rectangularBox = RectangularBox()
-    val rectangularBoxSurfaceArea = rectangularBox.calculateBoxSurfaceArea(
-        width = 4,
-        length = 6,
-        height = 4
-    )
+    val rectangularBox = RectangularBox(4, 6, 4)
+    val rectangularBoxSurfaceArea = rectangularBox.calculateBoxSurfaceArea()
     println("Surface area of a rectangular box is $rectangularBoxSurfaceArea")
 
-    val cubicBox = CubicBox()
-    val cubicBoxSurfaceArea = cubicBox.calculateBoxSurfaceArea(
-        edgeLength = 8
-    )
+    val cubicBox = CubicBox(8)
+    val cubicBoxSurfaceArea = cubicBox.calculateBoxSurfaceArea()
     println("Surface area of a cubic box is $cubicBoxSurfaceArea")
 }
 
